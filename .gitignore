@@ -1,0 +1,76 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+myvenv/
+
+# Environment variables / config
+.env
+*.env
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Pytest / Coverage
+.coverage
+htmlcov/
+.tox/
+.nox/
+.pytest_cache/
+
+# Logs
+*.log
+logs/
+
+# Docker
+**/Dockerfile
+**/docker-compose.override.yml
+
+# Ignore docker volumes (if any)
+data/
+volumes/
+
+# VSCode / IDE configs
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Python egg / wheel
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Pipenv / Poetry
+Pipfile.lock
+poetry.lock
+
+# Cache
+*.cache
+*.pytest_cache/
+__pypackages__/
+
+# Backup files
+*~
+*.bak
+*.swp
+
+# Model artifacts (if you don't want to share them)
+# Comment this out if you want to include models
+Backend/model/
+Backend/model/risk_model.pkl
+
+
+# Optional: exclude test data
+test_data/
