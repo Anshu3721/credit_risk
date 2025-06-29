@@ -1,52 +1,55 @@
-📊 Credit Risk Scoring App
-A complete machine learning project with FastAPI backend and Streamlit frontend, containerized with Docker.
-Predicts credit default risk from applicant financial data.
+# 📊 Credit Risk Scoring App
 
-✨ Features
-✅ FastAPI backend for model serving
-✅ Streamlit frontend UI for user input and visualization
-✅ Pretrained machine learning model (Random Forest)
-✅ Scikit-Learn StandardScaler for input preprocessing
-✅ Docker & Docker Compose support for easy deployment
-✅ Clean separation of backend and frontend services
+A **production-ready machine learning application** to predict credit default risk from applicant financial data, built with a **FastAPI backend**, a **Streamlit frontend**, and containerized for effortless deployment.
 
-⚙️ Architecture
-css
-Copy
-Edit
+---
+
+## ✨ Features
+
+- ✅ **FastAPI backend** for real-time prediction and model serving
+- ✅ **Streamlit UI** for intuitive user input & live risk visualization
+- ✅ **Pretrained ML model** (`RandomForestClassifier`)
+- ✅ **Automated input scaling** with `StandardScaler`
+- ✅ **Docker & Docker Compose** for one-command deployment
+- ✅ **Separation of backend/frontend** for robust, scalable architecture
+
+---
+
+## ⚙️ Project Structure
+
 credit_risk_project/
 ├── docker-compose.yml
 ├── backend/
-│   ├── main.py
-│   ├── schema.py
-│   ├── model/
-│   │   ├── risk_model.pkl
-│   │   └── scaler.pkl
-│   ├── requirements.txt
-│   └── Dockerfile
+│ ├── main.py
+│ ├── schema.py
+│ ├── model/
+│ │ ├── risk_model.pkl
+│ │ └── scaler.pkl
+│ ├── requirements.txt
+│ └── Dockerfile
 └── frontend/
-    ├── streamlit_app.py
-    ├── requirements.txt
-    └── Dockerfile
-Backend: FastAPI app exposing /predict_score endpoint.
+├── streamlit_app.py
+├── requirements.txt
+└── Dockerfile
 
-Frontend: Streamlit app with user-friendly form sending data to FastAPI.
-
-Docker Compose: Spins up both services with one command.
-
-✅ Requirements
-Python 3.10 / 3.11 (for local dev)
-
-Docker & Docker Compose
-
-🚀 Getting Started
-🟣 1️⃣ Clone the Repo
-bash
+yaml
 Copy
 Edit
+
+- **Backend:** FastAPI app exposing a `/predict_score` endpoint
+- **Frontend:** Streamlit app with a user-friendly input form, calls backend API
+- **Docker Compose:** Orchestrates both services for local/prod use
+
+---
+
+## 🚀 Getting Started
+
+### 1️⃣ Clone the Repository
+
+```bash
 git clone https://github.com/yourusername/credit_risk_project.git
 cd credit_risk_project
-🟢 2️⃣ Running Locally without Docker
+2️⃣ Run Locally (Without Docker)
 🧭 Backend (FastAPI)
 bash
 Copy
@@ -56,7 +59,7 @@ python -m venv venv
 source venv/bin/activate  # or venv\Scripts\activate on Windows
 pip install -r requirements.txt
 uvicorn main:app --reload --host 127.0.0.1 --port 8000
-✅ Open docs at http://127.0.0.1:8000/docs
+Open interactive docs: http://127.0.0.1:8000/docs
 
 🧭 Frontend (Streamlit)
 Open a new terminal:
@@ -69,35 +72,33 @@ python -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 streamlit run streamlit_app.py
-✅ Visit http://localhost:8501
+Access Streamlit UI: http://localhost:8501
 
-🟡 3️⃣ Running with Docker Compose (Recommended)
-Build & Start Both Services:
+3️⃣ Run with Docker Compose (Recommended)
 bash
 Copy
 Edit
 docker-compose up --build
-✅ FastAPI: http://localhost:8000/docs
-✅ Streamlit: http://localhost:8501
+FastAPI docs: http://localhost:8000/docs
 
-🟠 4️⃣ Stopping and Cleaning Up
+Streamlit UI: http://localhost:8501
+
+4️⃣ Stop & Clean Up
 bash
 Copy
 Edit
 docker-compose down
-⚡️ Model & Scaler
-The model and scaler files are saved in backend/model/.
+⚡️ Model & Scaler Files
+The model and scaler (risk_model.pkl, scaler.pkl) are stored in backend/model/.
 
-⚠️ These files can be large. It is recommended to ignore them in Git using:
+⚠️ Note: These files can be large!
 
-bash
-Copy
-Edit
-backend/model/
-For sharing large models, use Git LFS.
+Ignore them in Git with backend/model/ in .gitignore
 
-✅ Example .gitignore
-bash
+For files >100MB, use Git LFS
+
+Example .gitignore
+gitignore
 Copy
 Edit
 __pycache__/
@@ -107,49 +108,48 @@ venv/
 myvenv/
 .vscode/
 .idea/
-
-# Model artifacts
 backend/model/
 🧰 Technologies Used
-Python 3.11
+Python 3.10 / 3.11
 
-FastAPI
-
-Uvicorn
+FastAPI & Uvicorn
 
 Streamlit
 
-Scikit-Learn
+Scikit-Learn, Pandas, NumPy
 
-Pandas, NumPy
+Docker & Docker Compose
 
-Docker
+🛠️ How It Works
+User opens Streamlit UI in browser
 
-Docker Compose
+Fills out applicant financial data form
 
-⚙️ How It Works
-1️⃣ User opens Streamlit UI.
-2️⃣ Enters applicant details in the form.
-3️⃣ Streamlit sends a JSON POST request to FastAPI.
-4️⃣ FastAPI:
+Streamlit sends a POST request to FastAPI /predict_score
 
-Scales the input using StandardScaler
+FastAPI:
 
-Loads the trained RandomForestClassifier
+Scales input with StandardScaler
 
-Predicts risk score and class
-5️⃣ Response sent back to Streamlit.
-6️⃣ Streamlit displays:
+Loads the trained Random Forest model
 
-Prediction (High Risk / Low Risk)
+Predicts risk score & class
 
-Risk Score
+Response sent back to Streamlit
 
-✅ Example JSON request
-bash
+Streamlit displays:
+
+Risk Prediction: High Risk / Low Risk
+
+Risk Score: Probability of default
+
+✅ Example: API Usage
+Request
+http
 Copy
 Edit
 POST /predict_score
+Content-Type: application/json
 
 {
   "RevolvingUtilizationOfUnsecuredLines": 0.3,
@@ -162,8 +162,7 @@ POST /predict_score
   "has_any_delinquency": 0,
   "max_delinquency_duration": 0
 }
-✅ Response:
-
+Response
 json
 Copy
 Edit
@@ -172,12 +171,12 @@ Edit
   "risk_score": 0.12,
   "risk_level": "Low Risk"
 }
-⚠️ Troubleshooting
-✅ Error pushing large .pkl file to GitHub?
+🐞 Troubleshooting
+Error pushing large model (.pkl) to GitHub?
 
 GitHub blocks files >100MB.
 
-Solution: Remove from history:
+Solution: Remove from repo history:
 
 bash
 Copy
@@ -185,9 +184,9 @@ Edit
 pip install git-filter-repo
 git filter-repo --path backend/model/risk_model.pkl --invert-paths
 git push origin main --force
-✅ Or use Git LFS:
+Or use Git LFS:
 
-sql
+bash
 Copy
 Edit
 git lfs install
@@ -195,23 +194,8 @@ git lfs track "*.pkl"
 git add .gitattributes
 git commit -m "Track models with LFS"
 git push origin main
-✅ License
-MIT License.
-
-✅ Author
-👤 Anshu Kumar
-
-If you want, you can customize this further with:
-
-Badges
-
-Screenshots
-
-Credits
-
 🎯 TL;DR Usage
 Local (dev):
-
 bash
 Copy
 Edit
@@ -223,8 +207,16 @@ uvicorn main:app --reload
 cd frontend
 streamlit run streamlit_app.py
 Docker (production):
-
 bash
 Copy
 Edit
 docker-compose up --build
+🪪 License
+MIT License
+
+👤 Author
+Your Name
+
+💡 Want to Contribute?
+Open to improvements, new features, and suggestions!
+Feel free to open Issues or Pull Requests.
