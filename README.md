@@ -17,20 +17,7 @@ A **production-ready machine learning application** to predict credit default ri
 
 ## ⚙️ Project Structure
 
-`credit_risk_project/
-├── docker-compose.yml
-├── backend/
-│ ├── main.py
-│ ├── schema.py
-│ ├── model/
-│ │ ├── risk_model.pkl
-│ │ └── scaler.pkl
-│ ├── requirements.txt
-│ └── Dockerfile
-└── frontend/
-├── streamlit_app.py
-├── requirements.txt
-└── Dockerfile`
+<pre> ``` credit_risk_project/ ├── docker-compose.yml ├── backend/ │ ├── main.py │ ├── schema.py │ ├── model/ │ │ ├── risk_model.pkl │ │ └── scaler.pkl │ ├── requirements.txt │ └── Dockerfile └── frontend/ ├── streamlit_app.py ├── requirements.txt └── Dockerfile ``` </pre>
 
 yaml
 Copy
