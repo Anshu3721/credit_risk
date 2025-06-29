@@ -116,7 +116,6 @@ backend/model/
 - Streamlit
 - Scikit-Learn, Pandas, NumPy
 - Docker & Docker Compose
-- 
 ---
 
 ### 🛠️ How It Works
