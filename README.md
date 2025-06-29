@@ -17,7 +17,7 @@ A **production-ready machine learning application** to predict credit default ri
 
 ## ⚙️ Project Structure
 
-credit_risk_project/
+`credit_risk_project/
 ├── docker-compose.yml
 ├── backend/
 │ ├── main.py
@@ -30,7 +30,7 @@ credit_risk_project/
 └── frontend/
 ├── streamlit_app.py
 ├── requirements.txt
-└── Dockerfile
+└── Dockerfile`
 
 yaml
 Copy
@@ -56,11 +56,12 @@ cd credit_risk_project`
 bash
 Copy
 Edit
-cd backend
+`cd backend
 python -m venv venv
 source venv/bin/activate  # or venv\Scripts\activate on Windows
 pip install -r requirements.txt
-uvicorn main:app --reload --host 127.0.0.1 --port 8000
+uvicorn main:app --reload --host 127.0.0.1 --port 8000`
+
 Open interactive docs: http://127.0.0.1:8000/docs
 
 🧭 Frontend (Streamlit)
