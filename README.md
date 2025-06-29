@@ -46,10 +46,12 @@ Edit
 
 ### 1️⃣ Clone the Repository
 
-```bash
-git clone https://github.com/yourusername/credit_risk_project.git
-cd credit_risk_project
-2️⃣ Run Locally (Without Docker)
+
+`git clone https://github.com/yourusername/credit_risk_project.git
+cd credit_risk_project`
+
+
+### 2️⃣ Run Locally (Without Docker)
 🧭 Backend (FastAPI)
 bash
 Copy
@@ -74,7 +76,7 @@ pip install -r requirements.txt
 streamlit run streamlit_app.py
 Access Streamlit UI: http://localhost:8501
 
-3️⃣ Run with Docker Compose (Recommended)
+### 3️⃣ Run with Docker Compose (Recommended)
 bash
 Copy
 Edit
@@ -83,12 +85,12 @@ FastAPI docs: http://localhost:8000/docs
 
 Streamlit UI: http://localhost:8501
 
-4️⃣ Stop & Clean Up
+### 4️⃣ Stop & Clean Up
 bash
 Copy
 Edit
 docker-compose down
-⚡️ Model & Scaler Files
+### ⚡️ Model & Scaler Files
 The model and scaler (risk_model.pkl, scaler.pkl) are stored in backend/model/.
 
 ⚠️ Note: These files can be large!
@@ -97,7 +99,7 @@ Ignore them in Git with backend/model/ in .gitignore
 
 For files >100MB, use Git LFS
 
-Example .gitignore
+### Example .gitignore
 gitignore
 Copy
 Edit
@@ -109,7 +111,10 @@ myvenv/
 .vscode/
 .idea/
 backend/model/
-🧰 Technologies Used
+
+---
+
+### 🧰 Technologies Used
 Python 3.10 / 3.11
 
 FastAPI & Uvicorn
@@ -119,8 +124,9 @@ Streamlit
 Scikit-Learn, Pandas, NumPy
 
 Docker & Docker Compose
+---
 
-🛠️ How It Works
+### 🛠️ How It Works
 User opens Streamlit UI in browser
 
 Fills out applicant financial data form
@@ -137,13 +143,15 @@ Predicts risk score & class
 
 Response sent back to Streamlit
 
-Streamlit displays:
+### Streamlit displays:
 
 Risk Prediction: High Risk / Low Risk
 
 Risk Score: Probability of default
 
-✅ Example: API Usage
+---
+
+### ✅ Example: API Usage
 Request
 http
 Copy
@@ -171,7 +179,10 @@ Edit
   "risk_score": 0.12,
   "risk_level": "Low Risk"
 }
-🐞 Troubleshooting
+
+---
+
+### 🐞 Troubleshooting
 Error pushing large model (.pkl) to GitHub?
 
 GitHub blocks files >100MB.
@@ -194,29 +205,27 @@ git lfs track "*.pkl"
 git add .gitattributes
 git commit -m "Track models with LFS"
 git push origin main
-🎯 TL;DR Usage
-Local (dev):
-bash
-Copy
-Edit
-# Backend
+
+
+### Backend
 cd backend
 uvicorn main:app --reload
 
-# Frontend
+### Frontend
 cd frontend
 streamlit run streamlit_app.py
-Docker (production):
+
+
+### Docker (production):
 bash
 Copy
 Edit
 docker-compose up --build
-🪪 License
-MIT License
 
-👤 Author
+------
+### 👤 Author
 Your Name
 
-💡 Want to Contribute?
+### 💡 Want to Contribute?
 Open to improvements, new features, and suggestions!
 Feel free to open Issues or Pull Requests.
