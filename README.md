@@ -17,7 +17,23 @@ A **production-ready machine learning application** to predict credit default ri
 
 ## ⚙️ Project Structure
 
-<pre> ``` credit_risk_project/ ├── docker-compose.yml ├── backend/ │ ├── main.py │ ├── schema.py │ ├── model/ │ │ ├── risk_model.pkl │ │ └── scaler.pkl │ ├── requirements.txt │ └── Dockerfile └── frontend/ ├── streamlit_app.py ├── requirements.txt └── Dockerfile ``` </pre>
+```
+credit_risk_project/
+├── docker-compose.yml
+├── backend/
+│   ├── main.py
+│   ├── schema.py
+│   ├── model/
+│   │   ├── risk_model.pkl
+│   │   └── scaler.pkl
+│   ├── requirements.txt
+│   └── Dockerfile
+└── frontend/
+    ├── streamlit_app.py
+    ├── requirements.txt
+    └── Dockerfile
+```
+
 
 yaml
 Copy
@@ -34,8 +50,8 @@ Edit
 ### 1️⃣ Clone the Repository
 
 
-`git clone https://github.com/yourusername/credit_risk_project.git
-cd credit_risk_project`
+git clone https://github.com/yourusername/credit_risk_project.git
+cd credit_risk_project
 
 
 ### 2️⃣ Run Locally (Without Docker)
@@ -43,11 +59,11 @@ cd credit_risk_project`
 bash
 Copy
 Edit
-`cd backend
+cd backend
 python -m venv venv
 source venv/bin/activate  # or venv\Scripts\activate on Windows
 pip install -r requirements.txt
-uvicorn main:app --reload --host 127.0.0.1 --port 8000`
+uvicorn main:app --reload --host 127.0.0.1 --port 8000
 
 Open interactive docs: http://127.0.0.1:8000/docs
 
